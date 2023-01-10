@@ -1036,14 +1036,7 @@
                     {%- for media in product.media -%}
                     <img
                             id="Thumbnail-{{ section.id }}-{{ forloop.index }}-right"
-                            srcset="
-                            {% if media.preview_image.width >= 59 %}{{ media.preview_image | image_url: width: 59 }} 59w,{% endif %}
-                            {% if media.preview_image.width >= 118 %}{{ media.preview_image | image_url: width: 118 }} 118w,{% endif %}
-                            {% if media.preview_image.width >= 84 %}{{ media.preview_image | image_url: width: 84 }} 84w,{% endif %}
-                            {% if media.preview_image.width >= 168 %}{{ media.preview_image | image_url: width: 168 }} 168w,{% endif %}
-                            {% if media.preview_image.width >= 130 %}{{ media.preview_image | image_url: width: 130 }} 130w,{% endif %}
-                            {% if media.preview_image.width >= 260 %}{{ media.preview_image | image_url: width: 260 }} 260w{% endif %}
-                          "
+                            srcset="{{ product.selected_or_first_available_variant.featured_media }}"
                             src="{{ media | image_url: width: 84, height: 84 }}"
                             sizes="(min-width: 1200px) calc((1200px - 19.5rem) / 12), (min-width: 750px) calc((100vw - 16.5rem) / 8), calc((100vw - 8rem) / 5)"
                             alt="{{ media.alt | escape }}"
@@ -1052,7 +1045,7 @@
                             loading="lazy"
                     >
                     {% endfor %}
-                    {{ product.selected_or_first_available_variant.featured_media }}
+
                 </div>
                 <div class="product-info">
                     <div class="product__title" {{ block.shopify_attributes }}>

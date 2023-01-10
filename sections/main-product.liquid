@@ -1033,6 +1033,7 @@
         <div class="page-width">
             <div class="product-bar-wrap">
                 <div class="product-media">
+                    {%- for media in product.media -%}
                     <img
                             id="Thumbnail-{{ section.id }}-{{ forloop.index }}-right"
                             srcset="
@@ -1050,6 +1051,7 @@
                             width="200"
                             loading="lazy"
                     >
+                    {% endfor %}
                     {{ product.selected_or_first_available_variant.featured_media }}
                 </div>
                 <div class="product-info">

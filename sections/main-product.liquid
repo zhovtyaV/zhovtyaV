@@ -1042,9 +1042,8 @@
                             width="200"
                             loading="lazy"
                     >
-                    {% for image in product.images %}
-                        <img src="{{ image.src | product_img_url: 'medium' }}">
-                    {% endfor %}
+                        <img src="{{ product.images[0] | product_img_url: 'medium' }}">
+
 
                 </div>
                 <div class="product-info">

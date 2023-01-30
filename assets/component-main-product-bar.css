@@ -18,6 +18,7 @@
 
 .product-bar-wrap {
     display: flex;
+    align-items: center;
     padding-right: 150px;
     position: relative;
 }
@@ -26,7 +27,7 @@
     position: absolute;
     top: 50%;
     right: 0;
-    transform: translateX(-50%);
+    transform: translateY(-50%);
 }
 
 .product-bar-wrap .product-media {
@@ -36,6 +37,7 @@
     align-items: center;
     justify-content: center;
     margin-right: 15px;
+    flex-shrink: 0;
 }
 
 .product-bar-wrap .product-media img {

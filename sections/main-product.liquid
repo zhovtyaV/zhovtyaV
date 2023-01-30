@@ -27,6 +27,7 @@
     {%- endstyle -%}
 
     <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'component-main-product-bar.js' | asset_url }}" defer="defer"></script>
 
     {%- assign first_3d_model = product.media | where: "media_type", "model" | first -%}
     {%- if first_3d_model -%}
@@ -1033,7 +1034,6 @@
         <div class="page-width">
             <div class="product-bar-wrap">
                 <div class="product-media">
-                    <img src="{{ product.images[0] | product_img_url: 'medium' }}">
                     <img src="{{ product.featured_media | product_img_url: 'medium' }}">
                 </div>
                 <div class="product-info">
